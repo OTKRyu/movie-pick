@@ -11,3 +11,11 @@ def change_charactor(request):
 
 def get_schedule(request):
     pass
+
+def toggle_movie_to_see(request, movie_pk):
+    pass
+
+def change_rated_movie(request, movie_pk):
+    pass
+
+
