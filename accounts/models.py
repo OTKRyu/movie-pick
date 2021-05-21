@@ -5,10 +5,11 @@ from django.conf import settings
 # Create your models here.
 class User(AbstractUser):
     nickname = models.CharField(max_length=50)
-    user_img = models.CharField(max_length=100)
     series = models.CharField(max_length=20)
     movie_to_see = models.ManyToManyField(Movie, 'users_will_see')
     rated_movies = models.ManyToManyField(Movie, related_name='user_rates',through='Rate')
+    user_img = models.CharField(max_length=100)
+    
 
     def __str__(self):
         return self.username
