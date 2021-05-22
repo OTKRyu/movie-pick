@@ -161,7 +161,6 @@ JWT_AUTH = {
     'JWT_ALGORITHM': 'HS256',
     'JWT_ALLOW_REFRESH': False,
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),
-    'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=3),
 }
 
 CORS_ALLOW_ALL_ORIGINS = True

@@ -26,11 +26,5 @@ class Movie(models.Model):
     def __str__(self):
         return self.title
 
-class Character(models.Model):
-    name = models.CharField(max_length=20)
-    img_path = models.CharField(max_length=100)
-    series = models.ForeignKey(Series, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.name
 

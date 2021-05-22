@@ -7,7 +7,7 @@ class Review(models.Model):
     content = models.TextField()
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE, null=True)
-    user_like = models.ManyToManyField(settings.AUTH_USER_MODEL, 'review_like')
+    user_like = models.ManyToManyField(settings.AUTH_USER_MODEL, 'review_like', null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

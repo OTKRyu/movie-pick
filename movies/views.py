@@ -1,6 +1,5 @@
-from rest_framework.decorators import api_view, permission_classes, authentication_classes
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
-from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -12,7 +11,6 @@ from django.core.paginator import Paginator
 
 @api_view(['GET'])
 @permission_classes(( AllowAny, ))
-@authentication_classes((JSONWebTokenAuthentication,))
 def index(request):
     movies = Movie.objects.all()
     paginator = Paginator(movies, 10)
@@ -24,7 +22,6 @@ def index(request):
 
 @api_view(['GET'])
 @permission_classes(( AllowAny, ))
-@authentication_classes((JSONWebTokenAuthentication,))
 def auto(request, keyword):
     keyword = keyword
     movies = Movie.objects.filter(title__contains=keyword)
@@ -33,7 +30,6 @@ def auto(request, keyword):
     
 @api_view(['GET'])
 @permission_classes(( AllowAny, ))
-@authentication_classes((JSONWebTokenAuthentication,))
 def search(request, keyword):
     keyword = keyword
     movies = Movie.objects.filter(title__contains=keyword)
@@ -42,7 +38,6 @@ def search(request, keyword):
 
 @api_view(['GET'])
 @permission_classes(( AllowAny, ))
-@authentication_classes((JSONWebTokenAuthentication,))
 def detail(request, movie_pk):
     movie = get_object_or_404(Movie, pk=movie_pk)
     serializer = MovieSerializer(instance=movie)
