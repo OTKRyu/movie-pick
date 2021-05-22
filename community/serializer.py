@@ -3,9 +3,15 @@ from .models import Review, Comment
 from movies.serializers import MovieAutoSerializer
 from accounts.serializers import UserSimpleSerializer
 
+class CommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
+        fields = ['title','content']
+
 class ReviewListSerializer(serializers.ModelSerializer):
     user = UserSimpleSerializer()
     movie = MovieAutoSerializer()
+    
     class Meta:
         model = Review
         fields = ['id','title', 'movie', 'created_at', 'user']
@@ -13,7 +19,10 @@ class ReviewListSerializer(serializers.ModelSerializer):
 class ReviewSerializer(serializers.ModelSerializer):
     user = UserSimpleSerializer(read_only=True)
     user_like = UserSimpleSerializer(many=True, read_only=True)
+    user_like_count = serializers.IntegerField(source='user_like.count',read_only=True)
     movie = MovieAutoSerializer(read_only=True)
+    comment_set = CommentSerializer(many=True, read_only=True)
     class Meta:
         model = Review
-        fields = '__all__'
+        fields = ['id','title','user','movie','user_like','user_like_count','comment_set','content']
+
