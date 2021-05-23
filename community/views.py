@@ -1,10 +1,11 @@
 from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator
+from django.db.models import Count
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import serializers, status
 from .models import Review, Comment
 from .serializer import CommentSerializer, ReviewListSerializer, ReviewSerializer
 
@@ -13,7 +14,9 @@ from .serializer import CommentSerializer, ReviewListSerializer, ReviewSerialize
 @authentication_classes((JSONWebTokenAuthentication,))
 @permission_classes((IsAuthenticated, ))
 def get_top5(request):
-    pass
+    reviews = Review.objects.annotate(like=Count('user_like')).order_by('-like')[:5]
+    serializer = ReviewListSerializer(instance=reviews, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(['GET','POST'])
 @authentication_classes((JSONWebTokenAuthentication,))
