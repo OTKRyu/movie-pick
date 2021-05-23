@@ -18,5 +18,6 @@ class User(AbstractUser):
 class Rate(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name='movie_to_rate')
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='user_to_rate')
+    series = models.ForeignKey(Series, on_delete=models.CASCADE)
     rate = models.IntegerField()
     comment = models.CharField(max_length=50)

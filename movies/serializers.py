@@ -15,6 +15,7 @@ class MovieListSerializer(serializers.ModelSerializer):
     
 class MovieSerializer(serializers.ModelSerializer):
     series = SeriesSerializer()
+    
     class Meta:
         model = Movie
         exclude = ['later',]
