@@ -1,4 +1,5 @@
 from django.db.models import Avg
+from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -33,7 +34,7 @@ def change_series(request):
             else:
                 serializer = MovieListSerializer(instance=movie)
                 result.append(serializer.data)
-        return Response(result, stauts=status.HTTP_200_OK)
+        return Response(result, status=status.HTTP_200_OK)
     else:
         datas = request.data
         for i in range(len(datas)):
@@ -41,7 +42,7 @@ def change_series(request):
             if 0<=datas[i]['rate']<=5:
                 request.user.rated_movies.add(movie,through_defaults={'rate':datas[i]['rate'], 'series':movie.series})
         tmp = Rate.objects.filter(user=request.user).values('series').annotate(Avg('rate'))
-        series_id = 0
+        series_id = 1
         maximum = 0
         for i in range(len(tmp)):
             if tmp[i]['rate__avg'] > maximum:
@@ -51,7 +52,6 @@ def change_series(request):
         request.user.series = series
         request.user.save()
         question_trees = [
-
             None,
             [
                 None,
@@ -489,18 +489,33 @@ def change_series(request):
                 },
             ]
         ]
-        return Response(question_trees[series_id],status=status.HTTP_202_ACCEPTED)
+        return Response(question_trees[series_id], status=status.HTTP_202_ACCEPTED)
 
 
-
+@api_view(['PATCH'])
+@permission_classes([IsAuthenticated,])
+@authentication_classes([JSONWebTokenAuthentication,])
 def change_charactor(request):
-    pass
+    request.user.nickname = request.data['nickname']
+    request.user.user_img = request.data['user_img']
+    request.user.save()
+    return Response({'detail':'success'}, status=status.HTTP_202_ACCEPTED)
+
 
 def get_schedule(request):
     pass
 
+@api_view(['POST'])
+@permission_classes([IsAuthenticated,])
+@authentication_classes([JSONWebTokenAuthentication,])
 def toggle_movie_to_see(request, movie_pk):
-    pass
+    movie = get_object_or_404(Movie, pk=movie_pk)
+    if request.user.movie_to_see.filter(pk=movie_pk).exists():
+        request.user.movie_to_see.remove(movie)
+        return Response({'detail':'successfully removed'},status=status.HTTP_204_NO_CONTENT)
+    else:
+        request.user.movie_to_see.add(movie)
+        return Response({'detail':'successfully added'}, status=status.HTTP_201_CREATED)
 
 def change_rated_movie(request, movie_pk):
     pass
