@@ -76,10 +76,10 @@ def review_like(request, review_pk):
     review = get_object_or_404(Review, pk=review_pk)
     if review.user_like.filter(pk=request.user.pk).exists():
         review.user_like.remove(request.user)
-        return Response({'detail':'success'}, status=status.HTTP_204_NO_CONTENT)
+        return Response({'detail': False}, status=status.HTTP_204_NO_CONTENT)
     else:
         review.user_like.add(request.user)
-        return Response({'detail':'success'}, status=status.HTTP_201_CREATED)
+        return Response({'detail':True}, status=status.HTTP_201_CREATED)
 
 @api_view(['POST'])
 @permission_classes((IsAuthenticated, ))
