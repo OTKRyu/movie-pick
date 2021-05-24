@@ -6,7 +6,7 @@ from .models import Rate
 class UserSimpleSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
-        fields = ['id','username']
+        fields = ['id','nickname']
 
 class RateSerializer(serializers.ModelSerializer):
     movie = MovieAutoSerializer(read_only=True)

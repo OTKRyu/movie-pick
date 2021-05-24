@@ -16,7 +16,6 @@ class Review(models.Model):
 
 
 class Comment(models.Model):
-    title = models.CharField(max_length=50)
     content = models.TextField()
     review = models.ForeignKey(Review, on_delete=models.CASCADE)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)

@@ -4,9 +4,10 @@ from movies.serializers import MovieAutoSerializer
 from accounts.serializers import UserSimpleSerializer
 
 class CommentSerializer(serializers.ModelSerializer):
+    user = UserSimpleSerializer()
     class Meta:
         model = Comment
-        fields = ['title','content']
+        fields = ['user','content']
 
 class ReviewListSerializer(serializers.ModelSerializer):
     user = UserSimpleSerializer()

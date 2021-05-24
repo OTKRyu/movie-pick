@@ -7,7 +7,7 @@ class User(AbstractUser):
     nickname = models.CharField(max_length=50)
     user_img = models.CharField(max_length=100)
     series = models.ForeignKey(Series, on_delete=models.CASCADE, null=True)
-    movie_to_see = models.ManyToManyField(Movie, 'users_will_see')
+    movie_to_see = models.ManyToManyField(Movie, 'users_will_see', through='See')
     rated_movies = models.ManyToManyField(Movie, related_name='user_rates',through='Rate')
     
 
@@ -21,3 +21,8 @@ class Rate(models.Model):
     series = models.ForeignKey(Series, on_delete=models.CASCADE)
     rate = models.IntegerField()
     comment = models.CharField(max_length=50)
+
+class See(models.Model):
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    series = models.ForeignKey(Series, on_delete=models.CASCADE)

@@ -7,6 +7,7 @@ from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 from rest_framework.response import Response
 from rest_framework import serializers, status
 from .models import Review, Comment
+from movies.models import Movie
 from .serializer import CommentSerializer, ReviewListSerializer, ReviewSerializer
 
 
@@ -31,10 +32,17 @@ def index(request):
         serializer = ReviewListSerializer(instance=page_obj, many=True)
         return Response(serializer.data,status=status.HTTP_200_OK)        
     else:
-        serializer = ReviewSerializer(data=request.data)
-        if serializer.is_valid(raise_exception=True):
-            serializer.save(user=request.user)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        if request.data.get('movie'):
+            movie = Movie.objects.get(pk=request.data['movie'])
+            serializer = ReviewSerializer(data=request.data)
+            if serializer.is_valid(raise_exception=True):
+                serializer.save(user=request.user, movie=movie)
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            serializer = ReviewSerializer(data=request.data)
+            if serializer.is_valid(raise_exception=True):
+                serializer.save(user=request.user)
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
         
 @api_view(['GET','PUT','DELETE'])
 @permission_classes((IsAuthenticated, ))
