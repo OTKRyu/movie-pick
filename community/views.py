@@ -5,7 +5,7 @@ from rest_framework.decorators import api_view, permission_classes, authenticati
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 from rest_framework.response import Response
-from rest_framework import serializers, status
+from rest_framework import status
 from .models import Review, Comment
 from movies.models import Movie
 from .serializer import CommentSerializer, ReviewListSerializer, ReviewSerializer
@@ -76,10 +76,10 @@ def review_like(request, review_pk):
     review = get_object_or_404(Review, pk=review_pk)
     if review.user_like.filter(pk=request.user.pk).exists():
         review.user_like.remove(request.user)
-        return Response({'detail':'succes'}, status=status.HTTP_204_NO_CONTENT)
+        return Response({'detail':'success'}, status=status.HTTP_204_NO_CONTENT)
     else:
         review.user_like.add(request.user)
-        return Response({'detail':'succes'}, status=status.HTTP_201_CREATED)
+        return Response({'detail':'success'}, status=status.HTTP_201_CREATED)
 
 @api_view(['POST'])
 @permission_classes((IsAuthenticated, ))

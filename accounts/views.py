@@ -584,10 +584,10 @@ def toggle_movie_to_see(request, movie_pk):
     movie = get_object_or_404(Movie, pk=movie_pk)
     if request.user.movie_to_see.filter(pk=movie_pk).exists():
         request.user.movie_to_see.remove(movie)
-        return Response({'detail':'successfully removed'},status=status.HTTP_204_NO_CONTENT)
+        return Response({'detail':False },status=status.HTTP_204_NO_CONTENT)
     else:
         request.user.movie_to_see.add(movie, through_defaults={'series':movie.series})
-        return Response({'detail':'successfully added'}, status=status.HTTP_201_CREATED)
+        return Response({'detail':True }, status=status.HTTP_201_CREATED)
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated,])
