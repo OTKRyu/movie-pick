@@ -27,7 +27,7 @@ def index(request):
         reviews = Review.objects.order_by('-updated_at')
         paginator = Paginator(reviews, 10)
 
-        page_number = int(request.GET('page'))
+        page_number = int(request.GET('page')[0])
         page_obj = paginator.get_page(page_number)
         serializer = ReviewListSerializer(instance=page_obj, many=True)
         return Response(serializer.data,status=status.HTTP_200_OK)        

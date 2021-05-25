@@ -20,7 +20,7 @@ def index(request):
     movies = Movie.objects.all()
     paginator = Paginator(movies, 10)
 
-    page_number = int(request.GET('page'))
+    page_number = int(request.GET('page')[0])
     page_obj = paginator.get_page(page_number)
     serializer = MovieListSerializer(instance=page_obj, many=True)
     return Response(serializer.data,status=status.HTTP_200_OK)
