@@ -19,15 +19,15 @@ def get_top5(request):
     serializer = ReviewListSerializer(instance=reviews, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
-@api_view(['GET','POST'])
+@api_view(['PUT','POST'])
 @authentication_classes((JSONWebTokenAuthentication,))
 @permission_classes((IsAuthenticated, ))
 def index(request):
-    if request.method == 'GET':
+    if request.method == 'POST':
         reviews = Review.objects.order_by('-updated_at')
         paginator = Paginator(reviews, 10)
 
-        page_number = int(request.GET('page')[0])
+        page_number = request.data.get('page')
         page_obj = paginator.get_page(page_number)
         serializer = ReviewListSerializer(instance=page_obj, many=True)
         return Response(serializer.data,status=status.HTTP_200_OK)        
