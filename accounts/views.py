@@ -589,22 +589,30 @@ def toggle_movie_to_see(request, movie_pk):
         request.user.movie_to_see.add(movie, through_defaults={'series':movie.series})
         return Response({'detail':True }, status=status.HTTP_201_CREATED)
 
-@api_view(['POST'])
+@api_view(['POST','DELETE'])
 @permission_classes([IsAuthenticated,])
 @authentication_classes([JSONWebTokenAuthentication,])
 def change_rated_movie(request, movie_pk):
-    movie = get_object_or_404(Movie, pk=movie_pk)
-    if Rate.objects.filter(user=request.user, movie=movie).exists():
-        rate = Rate.objects.get(user=request.user,movie=movie)
-        if 0<=request.data['rate']<=5:
-            rate.rate = request.data['rate']
-            rate.comment = request.data['comment']
-            rate.save()
-            return Response({'detail':'successfully changed'}, status=status.HTTP_202_ACCEPTED)
+    if request.method == 'POST':
+        movie = get_object_or_404(Movie, pk=movie_pk)
+        if Rate.objects.filter(user=request.user, movie=movie).exists():
+            rate = Rate.objects.get(user=request.user,movie=movie)
+            if 0<=request.data.get('rate')<=5:
+                rate.rate = request.data['rate']
+                rate.comment = request.data['comment']
+                rate.save()
+                return Response({'detail':'successfully changed'}, status=status.HTTP_202_ACCEPTED)
+            else:
+                return Response({'detail':'rate should be in range 0 to 5'}, status=status.HTTP_400_BAD_REQUEST)
         else:
-            return Response({'detail':'rate should be in range 0 to 5'}, status=status.HTTP_400_BAD_REQUEST)
+            if 0<=request.data.get('rate')<=5:
+                request.user.rated_movies.add(movie, through_defaults={'rate':request.data.get('rate'),'comment':request.data.get('comment'),'series':movie.series})
+                return Response({'detail':'successfully added'}, status=status.HTTP_201_CREATED)
+            else:
+                return Response({'detail':'rate should be in range 0 to 5'}, status=status.HTTP_400_BAD_REQUEST)
     else:
-        request.user.rated_movies.add(movie, through_defaults={'rate':request.data['rate'],'comment':request.data['comment'],'series':movie.series})
-        return Response({'detail':'successfully added'}, status=status.HTTP_201_CREATED)
+        movie = get_object_or_404(Movie, pk=movie_pk)
+        request.user.rated_movies.remove(movie)
+        return Response({'detail': 'successfully removed'}, status=status.HTTP_204_NO_CONTENT)
 
 
