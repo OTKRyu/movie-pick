@@ -1,0 +1,16 @@
+[Unit]
+Description=uWSGI Service
+After=syslog.target
+
+[Service]
+User=ubuntu
+ExecStart=/home/ubuntu/movie_pick/venv/bin/uwsgi -i /home/ubuntu/movie_pick/.config/uwsgi/movie_pick.ini
+
+Restart=always
+KillSignal=SIGQUIT
+Type=notify
+StandardError=syslog
+NotifyAccess=all
+
+[Install]
+WantedBy=multi-user.target
