@@ -13,14 +13,14 @@ from django.core.paginator import Paginator
 from django.db.models import Avg
 # Create your views here.
 
-@api_view(['POST'])
+@api_view(['GET'])
 @authentication_classes((JSONWebTokenAuthentication,))
 @permission_classes((IsAuthenticated, ))
 def index(request):
     movies = Movie.objects.all()
     paginator = Paginator(movies, 10)
 
-    page_number = request.data.get('page')
+    page_number = int(request.query_params.dict()['page'])
     page_obj = paginator.get_page(page_number)
     serializer = MovieListSerializer(instance=page_obj, many=True)
     return Response(serializer.data,status=status.HTTP_200_OK)
