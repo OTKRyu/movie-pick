@@ -526,17 +526,17 @@ def change_charactor(request):
     return Response({'detail':'successfully changed'}, status=status.HTTP_202_ACCEPTED)
 
 from collections import deque
-@api_view(['GET'])
+@api_view(['POST'])
 @permission_classes([IsAuthenticated,])
 @authentication_classes([JSONWebTokenAuthentication,])
 def get_schedule(request):
-    series_id = request.data.get('series')
+    series_id = request.GET('series')
     if series_id:
         series = get_object_or_404(Series, pk=series_id)
         movies = request.user.movie_to_see.filter(series=series)
     else:
         movies = request.user.movie_to_see.all()
-    times = request.data['times']
+    times = request.data.get('times')
     check = [0]*len(movies)
     laters = [[] for i in range(len(movies))]
     for i in range(len(movies)):
@@ -561,7 +561,7 @@ def get_schedule(request):
     idx = 0
     tidx = 0
     while idx < len(movies) and tidx < len(times):
-        if times[tidx]['time'] > movies[result[idx]].runtime:
+        if times[tidx].get('time') > movies[result[idx]].runtime:
             if times[tidx].get('movies'):
                 serializer = MovieListSerializer(instance=movies[result[idx]])
                 times[tidx]['movies'].append(serializer.data)
