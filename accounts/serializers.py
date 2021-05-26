@@ -11,7 +11,7 @@ class UserSimpleSerializer(serializers.ModelSerializer):
 class RateSerializer(serializers.ModelSerializer):
     movie = MovieAutoSerializer(read_only=True)
     user = UserSimpleSerializer(read_only=True)
-    rate = serializers.IntegerField(min_value=0, max_value=5)
+    rate = serializers.FloatField(min_value=0, max_value=5)
     class Meta:
         model = Rate
         fields = '__all__'

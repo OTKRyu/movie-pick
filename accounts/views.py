@@ -530,7 +530,7 @@ from collections import deque
 @permission_classes([IsAuthenticated,])
 @authentication_classes([JSONWebTokenAuthentication,])
 def get_schedule(request):
-    series_id = request.GET('series')
+    series_id = request.data.get('series')
     if series_id:
         series = get_object_or_404(Series, pk=series_id)
         movies = request.user.movie_to_see.filter(series=series)
