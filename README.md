@@ -2,6 +2,13 @@
 
 ## 프로젝트 구조
 
+- 공통:
+  - trello
+    - ![trello](README.assets/trello.jpg)
+  - docs
+    - ![api end points](README.assets/api end points.png)
+    - ![api end points 2](README.assets/api end points 2.png)
+
 - 백엔드 서버: api 서버
   - python
   - django, django_extensions
@@ -43,9 +50,8 @@
 5. 배포 서버 URL
    - 백엔드 서버 : http://movie-pick.com/
    - 프론트엔드 서버 :
-6. 기타(느낀점)
 
-## 진행
+## 진행 및 느낀 점
 
 - 5/20 
   - 직접 만나서 공통에 해당하는 부분 작성
