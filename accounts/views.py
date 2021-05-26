@@ -111,56 +111,56 @@ def get_or_change_series(request):
                     'is_question': False,
                     'character': {
                         'name': '블랙팬서',
-                        'img_url' : 'http://localhost:8000/static/black_panther.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/black_panther.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '아이언맨',
-                        'img_url' : 'http://localhost:8000/static/iron_man.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/iron_man.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '캡틴 아메리카',
-                        'img_url' : 'http://localhost:8000/static/captiain_america.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/captiain_america.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '앤트맨',
-                        'img_url' : 'http://localhost:8000/static/antman.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/antman.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '토르',
-                        'img_url' : 'http://localhost:8000/static/thor.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/thor.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '헐크',
-                        'img_url' : 'http://localhost:8000/static/hulk.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/hulk.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '닥터 스트레인지',
-                        'img_url' : 'http://localhost:8000/static/dr_strange.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/dr_strange.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '블랙 위도우',
-                        'img_url' : 'http://localhost:8000/static/black_widow.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/black_widow.jpg'
                     },
                 },
             ],
@@ -198,56 +198,56 @@ def get_or_change_series(request):
                     'is_question': False,
                     'character': {
                         'name': '아쿠아맨',
-                        'img_url' : 'http://localhost:8000/static/aqua_man.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/aqua_man.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '슈퍼맨',
-                        'img_url' : 'http://localhost:8000/static/aqua_man.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/aqua_man.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '배트맨',
-                        'img_url' : 'http://localhost:8000/static/bat_man.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/bat_man.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '조커',
-                        'img_url' : 'http://localhost:8000/static/jocker.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/jocker.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '조커(다크나이트)',
-                        'img_url' : 'http://localhost:8000/static/jocker_darknight.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/jocker_darknight.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '샤잠',
-                        'img_url' : 'http://localhost:8000/static/shazam.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/shazam.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '할리퀸',
-                        'img_url' : 'http://localhost:8000/static/harley_quinn.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/harley_quinn.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '원더우먼',
-                        'img_url' : 'http://localhost:8000/static/wonder_woman.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/wonder_woman.jpg'
                     },
                 },
             ],
@@ -285,56 +285,56 @@ def get_or_change_series(request):
                     'is_question': False,
                     'character': {
                         'name': '헤르미온느',
-                        'img_url' : 'http://localhost:8000/static/hermione.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/hermione.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '론위즐리',
-                        'img_url' : 'http://localhost:8000/static/ron.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/ron.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '해리포터',
-                        'img_url' : 'http://localhost:8000/static/harry.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/harry.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '도비',
-                        'img_url' : 'http://localhost:8000/static/dobby.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/dobby.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '덤블도어',
-                        'img_url' : 'http://localhost:8000/static/dumbledore.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/dumbledore.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '볼드모트',
-                        'img_url' : 'http://localhost:8000/static/voldemort.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/voldemort.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '말포이',
-                        'img_url' : 'http://localhost:8000/static/malfoy.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/malfoy.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '스네이프',
-                        'img_url' : 'http://localhost:8000/static/snape.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/snape.jpg'
                     },
                 },
             ],
@@ -372,56 +372,56 @@ def get_or_change_series(request):
                     'is_question': False,
                     'character': {
                         'name': 'C3-PO',
-                        'img_url' : 'http://localhost:8000/static/c3po.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/c3po.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': 'R2D2',
-                        'img_url' : 'http://localhost:8000/static/r2d2.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/r2d2.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '츄바카',
-                        'img_url' : 'http://localhost:8000/static/chewbacca.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/chewbacca.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '요다',
-                        'img_url' : 'http://localhost:8000/static/toda.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/toda.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '다스베이더',
-                        'img_url' : 'http://localhost:8000/static/darth_vader.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/darth_vader.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '스톰트루퍼',
-                        'img_url' : 'http://localhost:8000/static/stormtrooper.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/stormtrooper.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '루크',
-                        'img_url' : 'http://localhost:8000/static/luke.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/luke.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '레아 공주',
-                        'img_url' : 'http://localhost:8000/static/princess.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/princess.jpg'
                     },
                 },
             ],
@@ -459,56 +459,56 @@ def get_or_change_series(request):
                     'is_question': False,
                     'character': {
                         'name': '골룸',
-                        'img_url' : 'http://localhost:8000/static/gollum.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/gollum.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '프로도',
-                        'img_url' : 'http://localhost:8000/static/frodo.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/frodo.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '빌보',
-                        'img_url' : 'http://localhost:8000/static/bilbo.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/bilbo.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '샘',
-                        'img_url' : 'http://localhost:8000/static/sam.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/sam.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '아라곤',
-                        'img_url' : 'http://localhost:8000/static/aragorn.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/aragorn.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '간달프',
-                        'img_url' : 'http://localhost:8000/static/gandalf.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/gandalf.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '사우론',
-                        'img_url' : 'http://localhost:8000/static/sauron.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/sauron.jpg'
                     },
                 },
                 {
                     'is_question': False,
                     'character': {
                         'name': '레골라스',
-                        'img_url' : 'http://localhost:8000/static/legolas.jpg'
+                        'img_url' : 'http://ec2-3-21-154-255.us-east-2.compute.amazonaws.com/static/legolas.jpg'
                     },
                 },
             ]

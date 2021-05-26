@@ -7,7 +7,7 @@ class CommentSerializer(serializers.ModelSerializer):
     user = UserSimpleSerializer(read_only=True)
     class Meta:
         model = Comment
-        fields = ['id', 'user','content']
+        fields = ['id','user','content']
 
 class ReviewListSerializer(serializers.ModelSerializer):
     user = UserSimpleSerializer()
