@@ -1,5 +1,12 @@
 ## final pjt
 
+## 프로젝트 구조
+
+- 백엔드 서버: django rest-framework를 활용한 api 서버
+  - 
+- 프론트엔드 서버: vue.js를 활용한 프론트 서버
+  - 
+
 ## 상세 정보
 
 1. 팀원 정보 및 업무 분담 내역 팀원: 유태규, 정유진 업무 분담 내역: 
@@ -22,7 +29,7 @@
        -   영화 스케쥴러(O)
        -   카카오톡 공유 기능()
 3. 데이터베이스 모델링(ERD)![img](https://lh3.googleusercontent.com/RPeD0nf82SzK4b_Mu51pXgKTheg4ynFcvpCP3EvPavjIO2KUNiZR9g6tny6KSzuDzz_--lcrN7UkbaccHsqbE8NfbRk-OG5njf_ZvtzKA2b8iRr-eK3_JgfvmZhrkwL4akzwqPJD)![img](https://lh5.googleusercontent.com/JTtmpERNgzXcgLs0-zn9SwmV18RG0JAzu_GxgSjLWPQv1W2f7V3LVLCE8_WvxWroBGGqEuWM_XRo1GG7CnfWvpNjW4tGdIuveOcGECtuOBItplOZviJwaBwSBudbN1eeOBlBAX3R)
-4. 필수 기능에 대한 설명 및 추천 기능: 
+4. 필수 기능에 대한 설명: 
    - 처음 회원가입시에 몇 개의 영화에 대해 평점을 매길 수 있도록 하고,
    - 이를 바탕으로 선호하는 영화 시리즈를 결정, 이 영화 시리즈에 해당하는 영화중 평점을 주지 않은 영화들을 보지 않은 영화라고 간주하여 추천
    - 익명 닉네임 설정 기능: 선호하는 영화 시리즈가 결정되면, 그 시리즈에 해당하는 캐릭터를 결정할 수 있는 질문을 사용자에게 제시. 그 답변 결과 정해진 캐릭터와 무작위 형용사를 조합하여 유저 닉네임 결정.
