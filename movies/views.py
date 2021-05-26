@@ -9,7 +9,6 @@ from .models import Movie
 from .serializers import MovieListSerializer,MovieSerializer, MovieAutoSerializer
 from accounts.models import Rate
 from accounts.serializers import RateSerializer
-from django.core.paginator import Paginator
 from django.db.models import Avg
 # Create your views here.
 import random
