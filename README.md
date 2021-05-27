@@ -6,9 +6,10 @@
   - trello
     - ![trello](README.assets/trello.jpg)
   - docs
-    - ![api end points](README.assets/api end points.png)
-    - ![api end points 2](README.assets/api end points 2.png)
-
+    - api end points
+      - ![api end points](README.assets/api end points.png)
+      - ![api end points 2](README.assets/api end points 2.png)
+  
 - 백엔드 서버: api 서버
   - python
   - django, django_extensions
@@ -17,15 +18,13 @@
   - corsheaders
   - nginx, uWSGI
   - sqlite3
-- 프론트엔드 서버: vue.js를 활용한 프론트 서버
-  - 
 
 ## 상세 정보
 
 1. 팀원 정보 및 업무 분담 내역 팀원: 유태규, 정유진 업무 분담 내역: 
    - 공통: 구현할 기능 및 api end points 설정, 최종 점검 및 발표 자료 구성 
-   - 유태규: backend api 서버 구축
-   -  정유진: frontend 서버 구축
+   - 유태규: backend api 서버 구축, 발표
+   -  정유진: frontend 서버 구축, ppt 제작
 2. 목표 서비스 구현 및 실제 구현 정도
    -  목표 서비스: 
      - 필수: 영화 추천 기능, 커뮤니티 기능(댓글, 리뷰), 평점(0~5) 
@@ -40,7 +39,7 @@
        -  닉네임 정해주기 (O)
        -  광고 기능(X: 사용한 static파일들의 source가 무료인지 아닌지 알 수가 없었으므로 광고는 달지 않았다)
        -   영화 스케쥴러(O)
-       -   카카오톡 공유 기능()
+       -   카카오톡 공유 기능(O)
 3. 데이터베이스 모델링(ERD)![img](https://lh3.googleusercontent.com/RPeD0nf82SzK4b_Mu51pXgKTheg4ynFcvpCP3EvPavjIO2KUNiZR9g6tny6KSzuDzz_--lcrN7UkbaccHsqbE8NfbRk-OG5njf_ZvtzKA2b8iRr-eK3_JgfvmZhrkwL4akzwqPJD)![img](https://lh5.googleusercontent.com/JTtmpERNgzXcgLs0-zn9SwmV18RG0JAzu_GxgSjLWPQv1W2f7V3LVLCE8_WvxWroBGGqEuWM_XRo1GG7CnfWvpNjW4tGdIuveOcGECtuOBItplOZviJwaBwSBudbN1eeOBlBAX3R)
 4. 필수 기능에 대한 설명: 
    - 처음 회원가입시에 몇 개의 영화에 대해 평점을 매길 수 있도록 하고,
@@ -48,8 +47,7 @@
    - 익명 닉네임 설정 기능: 선호하는 영화 시리즈가 결정되면, 그 시리즈에 해당하는 캐릭터를 결정할 수 있는 질문을 사용자에게 제시. 그 답변 결과 정해진 캐릭터와 무작위 형용사를 조합하여 유저 닉네임 결정. 이진트리를 이용하여 최종 캐릭터에 도달할 수 있도록 구현
    - 영화 스케쥴러: 영화에 후속작 관계를 이용하여 영화 관람 순서를 사전에 어느정도 정해둠. 실제로 영화를 볼려고 보는 시간에 대한 정보를 입력하면, 이 조건에 맞는 영화들을 그 시간에 맞게 배치하여 사용자에게 제시. 위상정렬을 이용하여 구현.
 5. 배포 서버 URL
-   - 백엔드 서버 : http://movie-pick.com/
-   - 프론트엔드 서버 :
+   - 백엔드 서버 : https://movie-pick.com/
 
 ## 진행 및 느낀 점
 
@@ -90,3 +88,8 @@
   - 최종 점검
   - 발표용 자료 만들기
   - 느낀 점: 배포된 후에도 수정사항이 나와서 고치고 있는데 버전관리의 중요성을 뼈저리게 느끼고 있다. cloud9서비스 덕분에 고치는게 그렇게까지 힘들지는 않지만 매번 같은 행동을 두 군데서 제대로 했는지 확인해가면서 하려니 머리가 보통 아픈게 아니다. 그리고 postman으로 보내는게 항상 같은 형식으로 변환되리란 보장은 할 수 없단걸 알았다. 최종점검은 서버가 제대로 돌아간 이후로는 그렇게 어렵지 않게 성공했다. 프론트단과의 통신도 정상적이었다. 다만 조금 딜레이가 있었던 게 장고서버의 문제인지는 잘 알 수가 없었다. 발표자료에 대한 작업을 하면서 느낀 점은, 잘 만드는 것도 중요하지만 잘 보이게 어필하는 것도 중요하다는 점이다.
+- 5/27
+  - 발표용 자료 마무리
+  - 배포 서버 후속 작업
+  - 느낀 점: 끝나고 나니까 그래도 나름 뿌듯하다. https다는 작업까지 했는데 다 자동화되어 있어서 하긴 했는데 뭘 했는지도 사실 잘 모르겠다. 여전히 배울 게 많아보인다.
+
