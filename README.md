@@ -25,6 +25,7 @@
    - 공통: 구현할 기능 및 api end points 설정, 최종 점검 및 발표 자료 구성 
    - 유태규: backend api 서버 구축, 발표
    -  정유진: frontend 서버 구축, ppt 제작
+   
 2. 목표 서비스 구현 및 실제 구현 정도
    -  목표 서비스: 
      - 필수: 영화 추천 기능, 커뮤니티 기능(댓글, 리뷰), 평점(0~5) 
@@ -40,12 +41,17 @@
        -  광고 기능(X: 사용한 static파일들의 source가 무료인지 아닌지 알 수가 없었으므로 광고는 달지 않았다)
        -   영화 스케쥴러(O)
        -   카카오톡 공유 기능(O)
-3. 데이터베이스 모델링(ERD)![img](https://lh3.googleusercontent.com/RPeD0nf82SzK4b_Mu51pXgKTheg4ynFcvpCP3EvPavjIO2KUNiZR9g6tny6KSzuDzz_--lcrN7UkbaccHsqbE8NfbRk-OG5njf_ZvtzKA2b8iRr-eK3_JgfvmZhrkwL4akzwqPJD)![img](https://lh5.googleusercontent.com/JTtmpERNgzXcgLs0-zn9SwmV18RG0JAzu_GxgSjLWPQv1W2f7V3LVLCE8_WvxWroBGGqEuWM_XRo1GG7CnfWvpNjW4tGdIuveOcGECtuOBItplOZviJwaBwSBudbN1eeOBlBAX3R)
+   
+3. 데이터베이스 모델링(ERD)
+
+   ![Cap 2021-08-23 21-32-09-906](README.assets/Cap 2021-08-23 21-32-09-906.png)
+
 4. 필수 기능에 대한 설명: 
    - 처음 회원가입시에 몇 개의 영화에 대해 평점을 매길 수 있도록 하고,
    - 이를 바탕으로 선호하는 영화 시리즈를 결정, 이 영화 시리즈에 해당하는 영화중 평점을 주지 않은 영화들을 보지 않은 영화라고 간주하여 추천
    - 익명 닉네임 설정 기능: 선호하는 영화 시리즈가 결정되면, 그 시리즈에 해당하는 캐릭터를 결정할 수 있는 질문을 사용자에게 제시. 그 답변 결과 정해진 캐릭터와 무작위 형용사를 조합하여 유저 닉네임 결정. 이진트리를 이용하여 최종 캐릭터에 도달할 수 있도록 구현
    - 영화 스케쥴러: 영화에 후속작 관계를 이용하여 영화 관람 순서를 사전에 어느정도 정해둠. 실제로 영화를 볼려고 보는 시간에 대한 정보를 입력하면, 이 조건에 맞는 영화들을 그 시간에 맞게 배치하여 사용자에게 제시. 위상정렬을 이용하여 구현.
+
 5. 배포 서버 URL
    - 백엔드 서버 : https://movie-pick.com/
 
